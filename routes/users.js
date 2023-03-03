@@ -1,11 +1,11 @@
 var express = require("express");
 var router = express.Router();
 const db = require("../model/helper");
-const { userSameUser } = require("../middleware/guards");
+const { ensureSameUser } = require("../middleware/guards");
 
 //get user id so he can only see his own profile
 
-router.get("/:id", userSameUser, async function (req, res, next) {
+router.get("/:id", ensureSameUser, async function (req, res, next) {
   let { userId } = req.params;
   let sql = `select * from users where id=${userId}`;
 
