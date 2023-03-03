@@ -1,63 +1,56 @@
 .HomeView {
-    font-family: 'Alumni Sans', sans-serif;
-    height:100vh;
-    width: 100vw;
-    background-image: url("../images/wedding-photo.jpg");
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-size: cover;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    /* background-attachment: scroll; */
+  font-family: "Alumni Sans", sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../images/wedding-photo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  /* background-attachment: scroll; */
 }
 
-h1 {
-    margin:0px;
-    padding-top:160px;
-    font-family: 'Montserrat Subrayada', Optima, sans-serif;
-    font-weight:bold;
-    font-size: 80px;
-    letter-spacing: 0.05em;
-    color: #f7b2ad;
-    text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #f7b2ad,
-      0 0 82px #f7b2ad,
-      0 0 92px #f7b2ad,
-      0 0 102px #f7b2ad,
-      0 0 151px #f7b2ad;
-}
+/* h1 {
+  margin: 0px;
+  padding-top: 160px;
+  font-family: "Montserrat Subrayada", Optima, sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  letter-spacing: 0.05em;
+  color: #f7b2ad;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #f7b2ad,
+    0 0 82px #f7b2ad, 0 0 92px #f7b2ad, 0 0 102px #f7b2ad, 0 0 151px #f7b2ad;
+} */
 
 #homepage-buttons {
-    width: 20%;
-    margin: 0 auto;
-    margin-top:100px;
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
-.HomeView button{
-    display:block;
-    width:100%;
-    background: #f7b2ad;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    padding:5px;
-    border-radius:20px;
-    outline: none;
-    border:none;
-    font-family: 'Alumni Sans', sans-serif;
-    font-size: 20px;
-    letter-spacing: 0.1em;
-    cursor:pointer;
+.HomeView button {
+  display: block;
+  width: 100%;
+  background: #f7b2ad;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
 }
 
 .HomeView button:hover {
-    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.7);
-  }
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.7);
+}
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }

@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 import "./HomeView.css";
-import { Link } from "react-router-dom";
+import Login from "./Login.js";
+import { useNavigate, NavLink, Link } from "react-router-dom";
 
-export default function HomeView() {
+export default function HomeView(props) {
   return (
     <div className="HomeView">
-      <h1>MATRIMONEY</h1>
+      {props.user} ?
       <div id="homepage-buttons">
         <Link to="/budget">
           <button type="button">VIEW MY BUDGET</button>
@@ -14,6 +15,7 @@ export default function HomeView() {
           <button type="button">ADD FUNDS</button>
         </Link>
       </div>
+      :
     </div>
-  )
+  );
 }

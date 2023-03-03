@@ -1,32 +1,32 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 const db = require("../model/helper");
 
 /* GET costs listing. */
-router.get('/', async function(req, res, next) {
+router.get("/", async function (req, res, next) {
   try {
     let result = await db(`SELECT * FROM cost_actual`);
-      res.send(result.data);
+    res.send(result.data);
   } catch (err) {
-    res.status(500).send({error: err.message})
+    res.status(500).send({ error: err.message });
   }
 });
 
-router.get('/:id', async function (req, res, next) {
+router.get("/:id", async function (req, res, next) {
   let id = Number(req.params.id);
   try {
     let result = await db(`SELECT * FROM cost_actual WHERE id = ${id}`);
     if (result.data.length === 0) {
-      res.status(404).send({error: 'item not found'})
+      res.status(404).send({ error: "item not found" });
     } else {
-      res.send(result.data)
+      res.send(result.data);
     }
-  } catch(err) {
-    res.status(500).send({error: err.message})
+  } catch (err) {
+    res.status(500).send({ error: err.message });
   }
 });
 
-router.post('/', async function(req, res, next) {
+router.post("/", async function (req, res, next) {
   let newCostItem = req.body;
   let sql = `
     INSERT INTO cost_actual (text, amount, notes, income_id)
@@ -35,26 +35,26 @@ router.post('/', async function(req, res, next) {
   try {
     await db(sql);
     let result = await db(`SELECT * FROM cost_actual`);
-    res.status(201).send(result.data)
-  } catch(err) {
-    res.status(500).send({error: err.message})
+    res.status(201).send(result.data);
+  } catch (err) {
+    res.status(500).send({ error: err.message });
   }
-})
+});
 
-router.delete('/:id', async function(req, res, next) {
+router.delete("/:id", async function (req, res, next) {
   let id = req.params.id;
   try {
     let result = await db(`SELECT * FROM cost_actual WHERE id = ${id}`);
-    if (result.data.length === 0){
-      res.status(404).send({error: 'item not found'});
+    if (result.data.length === 0) {
+      res.status(404).send({ error: "item not found" });
     } else {
       await db(`DELETE FROM cost_actual WHERE id = ${id}`);
       let result = await db(`SELECT * FROM cost_actual`);
-      res.send(result.data)
+      res.send(result.data);
     }
-  } catch(err) {
-    res.status(500).send({error: err.message})
+  } catch (err) {
+    res.status(500).send({ error: err.message });
   }
-})
+});
 
 module.exports = router;

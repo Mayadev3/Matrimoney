@@ -1,0 +1,44 @@
+h1 {
+  margin: 0px;
+  font-family: "Montserrat Subrayada", Optima, sans-serif;
+  font-weight: bold;
+  font-size: 80px;
+  letter-spacing: 0.05em;
+  color: #f7b2ad;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #f7b2ad,
+    0 0 82px #f7b2ad, 0 0 92px #f7b2ad, 0 0 102px #f7b2ad, 0 0 151px #f7b2ad;
+}
+
+.nav-bar {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  height: 50px;
+}
+form {
+  margin-top: 40px;
+}
+input {
+  border-radius: 6px;
+  border: 0.3px solid #f7b2ad;
+  padding: 10px 10px;
+}
+.input1,
+.input2 {
+  width: 50%;
+  margin: 0 auto;
+}
+.input2 {
+  margin-top: 20px;
+}
+.login-button {
+  width: 100px;
+  margin-top: 30px;
+  border-radius: 3px;
+  border: none;
+}
+p {
+  font-weight: bold;
+  text-shadow: 6px 6px 0px #b1767279;
+  color: black;
+}
