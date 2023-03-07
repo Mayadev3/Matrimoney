@@ -7,6 +7,8 @@ var indexRouter = require("./routes/index");
 var incomeRouter = require("./routes/income");
 var budgetRouter = require("./routes/budget");
 var costsRouter = require("./routes/costs");
+var usersRouter = require("./routes/users");
+var loginRouter = require("./routes/auth");
 
 const cors = require("cors");
 
@@ -22,5 +24,7 @@ app.use("/", indexRouter);
 app.use("/income", incomeRouter);
 app.use("/budget", budgetRouter);
 app.use("/budget/costs", costsRouter);
+app.use("/users", usersRouter); //since i put /users then in the users.js no need to put /users in the route, it is enough to just put "/" cause this file and the users.js file is connected
+app.use("/login", loginRouter);
 
 module.exports = app;

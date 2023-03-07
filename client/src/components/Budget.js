@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
 import "./Budget.css";
 import logo from "../images/logo.png";
-import MatrimoneyApi from "../MatrimoneyApi";
+import MatrimoneyApi from "../helpers/MatrimoneyApi";
 
 export default function Budget() {
   const [estimatedCosts, setEstCosts] = React.useState([]);

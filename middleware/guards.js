@@ -9,11 +9,14 @@ const { SECRET_KEY } = require("../config");
  * Make sure the user is logged in
  **/
 
+//this gaurd was sent to the costs.js file route cause it needs the id of the payload to access the profile info
 function ensureUserLoggedIn(req, res, next) {
-  let token = _getToken();
+  let token = _getToken(req);
 
   try {
-    jwt.verify(token, SECRET_KEY);
+    const payload = jwt.verify(token, SECRET_KEY);
+    req.payload = payload; //this is what i am passing to the next() layer, when i pass info to the next layer i use req
+    //i am passing the payload cause it has the id
     next();
   } catch (err) {
     res.status(500).send({ err: err.message });
@@ -24,7 +27,7 @@ function ensureUserLoggedIn(req, res, next) {
  * Make sure user is logged in and is accessing his/her own page.
  * i.e. userId in token === userId in URL param
  **/
-
+//this guard was sent to the users.js file route
 function ensureSameUser(req, res, next) {
   let token = _getToken(req);
 
@@ -46,7 +49,7 @@ function ensureSameUser(req, res, next) {
  **/
 
 function _getToken(req) {
-  if (!("autherization" in req.headers)) {
+  if (!("authorization" in req.headers)) {
     return "";
   }
 
@@ -54,7 +57,7 @@ function _getToken(req) {
   let authHeader = req.headers["authorization"];
   let [str, token] = authHeader.split(" ");
 
-  return str === "Bearer" ? token : "";
+  return str === "Bearer" ? token : ""; //here i use return not req cause i am sending it to the functions above
 }
 
 module.exports = {

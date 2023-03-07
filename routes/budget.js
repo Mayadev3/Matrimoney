@@ -1,46 +1,49 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 const db = require("../model/helper");
 
 /* GET budget listing. */
-router.get('/', async function(req, res, next) {
+router.get("/", async function (req, res, next) {
   try {
     let result = await db(`SELECT * FROM cost_estimate`);
-      res.send(result.data);
+    res.send(result.data);
   } catch (err) {
-    res.status(500).send({error: err.message})
+    res.status(500).send({ error: err.message });
   }
 });
 
-router.post('/', async function (req, res, next) {
+// add a new expense
+//????
+router.post("/", async function (req, res, next) {
   let newBudgetItem = req.body;
   let sql = `
-    INSERT INTO cost_estimate (text, amount)
-    VALUES ("${newBudgetItem.text}", ${newBudgetItem.amount})
+    INSERT INTO cost_estimate (text, amount, userId)
+    VALUES ("${newBudgetItem.text}", ${newBudgetItem.amount}, ${newBudgetItem.userId})
   `;
   try {
     await db(sql);
     let result = await db(`SELECT * FROM cost_estimate`);
-    res.status(201).send(result.data)
-  } catch(err) {
-    res.status(500).send({error: err.message})
+    res.status(201).send(result.data);
+  } catch (err) {
+    res.status(500).send({ error: err.message });
   }
-})
+});
 
-router.delete('/:id', async function(req, res, next) {
+//deleting an expense
+router.delete("/:id", async function (req, res, next) {
   let id = req.params.id;
   try {
     let result = await db(`SELECT * FROM cost_estimate WHERE id = ${id}`);
     if (result.data.length === 0) {
-      res.status(404).send({error: `item not found`})
+      res.status(404).send({ error: `item not found` });
     } else {
       await db(`DELETE FROM cost_estimate WHERE id = ${id}`);
       let result = await db(`SELECT * FROM cost_estimate`);
-      res.send(result.data)
+      res.send(result.data);
     }
-  } catch(err) {
-    res.status(500).send({error: err.message})
+  } catch (err) {
+    res.status(500).send({ error: err.message });
   }
-})
+});
 
 module.exports = router;

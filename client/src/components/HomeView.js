@@ -6,7 +6,7 @@ import { useNavigate, NavLink, Link } from "react-router-dom";
 export default function HomeView(props) {
   return (
     <div className="HomeView">
-      {props.user} ?
+      {/* {props.user} */}
       <div id="homepage-buttons">
         <Link to="/budget">
           <button type="button">VIEW MY BUDGET</button>

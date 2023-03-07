@@ -1,15 +1,18 @@
-*{
+* {
   box-sizing: border-box;
 }
 
 div {
-  position:relative;
+  position: relative;
 }
 
 .App {
   text-align: center;
-  font-family: 'Alumni Sans', sans-serif;
-  font-size:20px;
+  font-family: "Alumni Sans", sans-serif;
+  font-size: 20px;
+}
+.logout {
+  text-align: right;
 }
 
 /* nav bar */
@@ -17,85 +20,80 @@ div {
   margin: 0px 60px 10px 20px;
   text-align: left;
   letter-spacing: 0.1em;
-  font-size:22px;
-  text-transform:uppercase;
+  font-size: 22px;
+  text-transform: uppercase;
   position: relative;
-  padding-top:15px;
+  padding-top: 15px;
 }
 
 nav img {
-    width:50px;
-    aspect-ratio: 1/1;
-    object-fit:contain;
-    vertical-align: middle;
-} 
-
-.nav-link {
-  margin-left: 20px;
-  color:#7A3B69;
+  width: 50px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
-.nav-link:hover{
-  text-shadow: 0.5px 0.5px 1px #7A3B69;
+.nav-link:hover {
+  text-shadow: 0.5px 0.5px 1px #7a3b69;
 }
 
 .selected-link {
   font-weight: bolder;
-  text-shadow: 0.5px 0.5px 0.5px #7A3B69;
+  text-shadow: 0.5px 0.5px 0.5px #7a3b69;
 }
 
 /* styling that applies to both budget and funds */
 h2 {
-  margin-top:0;
+  margin-top: 0;
   font-size: 56px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color:#0F0F0F;
-  position:relative;
+  color: #0f0f0f;
+  position: relative;
 }
 
 h3 {
-  margin-top:0;
+  margin-top: 0;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color:#0F0F0F;
-  padding-top:25px;
+  color: #0f0f0f;
+  padding-top: 25px;
 }
 
 a {
-  color:#0F0F0F;
+  color: #0f0f0f;
 }
 
-.secondary-nav{
-  text-align:right;
-  margin-right:75px;
+.secondary-nav {
+  text-align: right;
+  margin-right: 75px;
 }
 
 .secondary-nav a {
   margin-left: 20px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size:22px;
+  font-size: 22px;
 }
 
 .secondary-nav a:hover {
   text-shadow: 0.5px 0.5px 1px #0f0f0f;
 }
 
-.selected-second-nav{
-  font-weight:bolder;
+.selected-second-nav {
+  font-weight: bolder;
 }
 
-.bottom-container{
+.bottom-container {
   background: rgba(247, 178, 173, 0.5);
-  width:100%;
-  padding-bottom:10px;
-  min-height:75vh;
+  width: 100%;
+  padding-bottom: 10px;
+  min-height: 75vh;
 }
 
 table {
-  width:100%;
+  width: 100%;
   border: 3px solid white;
 }
 
@@ -104,59 +102,58 @@ td {
 }
 
 h4 {
-  margin-bottom:5px;
+  margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color:#0F0F0F;
-  margin-top:10px;
+  color: #0f0f0f;
+  margin-top: 10px;
 }
 
-label{
-  width:100%;
+label {
+  width: 100%;
 }
 
-input{
-  display:block;
-  width:100%;
-  outline:none;
+input {
+  display: block;
+  width: 100%;
+  outline: none;
 }
 
 form button {
   border-radius: 45px;
   outline: none;
-  border:1px solid #0f0f0f;
-  background: #FBDCDA;
-  font-weight:bold;
+  border: 1px solid #0f0f0f;
+  background: #fbdcda;
+  font-weight: bold;
   vertical-align: middle;
   text-align: center;
-  margin-right:10px; 
-  padding:0px 11px 0px 11px;
-
+  margin-right: 10px;
+  padding: 0px 11px 0px 11px;
 }
 
-form button:hover{
+form button:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 td button {
-  margin-right:5px;
-  float:right;
+  margin-right: 5px;
+  float: right;
   border-radius: 15px;
   outline: none;
-  border:1px solid #0f0f0f;
-  background: #FBDCDA;
-  font-weight:bold;
-  font-size:14px;
+  border: 1px solid #0f0f0f;
+  background: #fbdcda;
+  font-weight: bold;
+  font-size: 14px;
   text-align: center;
-  padding:0px 8px 0px 8px;
+  padding: 0px 8px 0px 8px;
 }
 
-td button:hover{
+td button:hover {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
-.cursor-pointer{
-  cursor:pointer;
+.cursor-pointer {
+  cursor: pointer;
 }
 
 /* estimated costs page */
@@ -167,14 +164,14 @@ td button:hover{
 /* actual costs page */
 .actual-grid-right {
   border: 2px solid white;
-  padding-bottom:15px;
+  padding-bottom: 15px;
 }
-select{
-  width:100%;
-  background:white;
-  border:1px solid rgb(153, 153, 153);
-  border-radius:2px;
-  height:35px;
+select {
+  width: 100%;
+  background: white;
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 2px;
+  height: 35px;
   letter-spacing: 0.05em;
 }
 
@@ -182,25 +179,25 @@ option {
   background-color: white;
 }
 
-.invis-button{
-  outline:none;
-  color:transparent;
-  border:none;
-  cursor:none;
+.invis-button {
+  outline: none;
+  color: transparent;
+  border: none;
+  cursor: none;
 }
 
 .invis-button:hover {
-  border:none;
+  border: none;
   box-shadow: none;
-  cursor:auto;
+  cursor: auto;
 }
 
-.actual-cost-form{
-  margin-bottom:50px;
+.actual-cost-form {
+  margin-bottom: 50px;
 }
 
 .Compare table {
-  margin-bottom:50px;
+  margin-bottom: 50px;
 }
 
 /* funds display page */
@@ -210,21 +207,21 @@ option {
 }
 
 .Funds td button {
-  margin-top:4px;
+  margin-top: 4px;
 }
 
 .alert {
   margin: 0 auto;
-  margin-top:20px;
-  background-color:#7A3B69;
+  margin-top: 20px;
+  background-color: #7a3b69;
   opacity: 0.6;
   color: white;
-  border-radius:10px;
+  border-radius: 10px;
   text-transform: uppercase;
   font-size: 20px;
   letter-spacing: 0.1em;
 }
 
 .FundsDisplay table {
-  padding-bottom:50px;
+  padding-bottom: 50px;
 }
